@@ -1,3 +1,5 @@
+use crate::structs::{Color};
+
 pub struct Program{
     pub count: i32,
     pub leave: bool
@@ -5,6 +7,14 @@ pub struct Program{
 
 pub trait Beep{
     fn beep(&mut self) -> bool;
+}
+
+pub trait Init{
+    fn init(&mut self) -> bool;
+}
+
+pub trait CreateColor{
+    fn create_color(&mut self) -> Color;
 }
 
 impl Beep for Program{
@@ -15,5 +25,12 @@ impl Beep for Program{
             return false;
         }
         return true;
+    }
+}
+
+impl Init for Program{
+    fn init(&mut self) -> bool{
+
+        return false;
     }
 }
