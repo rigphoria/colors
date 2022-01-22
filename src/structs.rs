@@ -1,8 +1,18 @@
 use std::marker::PhantomData;
+use serde::Deserialize;
+
+#[derive(Debug, Deserialize)]
+pub struct ColorTemp{
+    pub r: i32, pub g: i32, pub b: i32,
+    pub rgb_code: String,
+    pub name: String,
+    pub dmc: i32,
+}
 
 pub struct Color<'a, T: 'a>{
     pub r: i32, pub g: i32, pub b: i32,
     pub rgb_code: String,
+    pub name: String,
     pub dmc: i32,
     pub pd: PhantomData<&'a T>
 }

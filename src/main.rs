@@ -6,6 +6,7 @@ use crate::data::*;
 
 mod data;
 mod structs;
+mod dmcdata;
 
 fn main(){
     // let mut fb = FooBar{
